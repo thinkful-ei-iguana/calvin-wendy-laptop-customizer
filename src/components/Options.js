@@ -14,21 +14,27 @@ class Options extends React.Component {
   optionChoice = () => {
     this.props.features.map(choice => choice);
   };
-
   render() {
-    console.log(this.props.id);
-    console.log(this.props.features[0].name);
     return (
       <div className="summary__option" key={this.props.id}>
         {/* <div className="summary__option__label">{this.props.feature} </div>
         <div className="summary__option__value">{this.selectedOption}</div> */}
-        <label for={this.props.id}>
-          {this.props.features[0]}
+        <label className="1" htmlFor={this.props.id}>
+          {this.props.features}
           <input
-            type="text"
+            type="radio"
             id={this.props.id}
             value={this.props.features}
-            name={this.props.id}
+            name={this.props.name}
+          ></input>
+        </label>
+        <label className="2" htmlFor={this.props.id}>
+          {this.props.features}
+          <input
+            type="radio"
+            id={this.props.id}
+            value={this.props.features}
+            name={this.props.name}
           ></input>
         </label>
       </div>

@@ -7,8 +7,8 @@ import slugify from "slugify";
 // in both URLs and html attributes
 
 class AppDev extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       selected: {
         Processor: {
@@ -20,7 +20,7 @@ class AppDev extends React.Component {
           cost: 200
         },
         "Video Card": {
-          name: "Toyota Corolla 1.5v",
+          name: "Toyota Brown Corolla 1.5v",
           cost: 1150.98
         },
         Display: {
@@ -30,45 +30,25 @@ class AppDev extends React.Component {
       }
     };
   }
+
+  testFn = Object.keys(this.props.features).map((feature, idx) => {
+    const featureHash = feature + "-" + idx;
+  });
   render() {
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
-        <Features
-          updateFeature={this.updateFeature}
-          features={this.props.features}
-        />
-        {/* <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            {features}
-          </form>
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-            </div>
-          </section>
-        </main> */}
+        <main>
+          <Features
+            updateFeature={this.updateFeature}
+            features={this.props.features}
+            test={() => this.testFn}
+          />
+        </main>
       </div>
     );
   }
 }
-//
-
-//
-//   );
-// });
-
-// total = Object.keys(this.state.selected).reduce(
-//   (acc, curr) => acc + this.state.selected[curr].cost,
-//   0
-// );
-
-//   }
-// }
-
 export default AppDev;
