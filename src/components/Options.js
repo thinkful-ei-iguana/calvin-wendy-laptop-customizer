@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Options.css";
 class Options extends React.Component {
   updateFeature = (feature, newValue) => {
     // const featureHash = feature + "-" + idx;
@@ -17,17 +17,18 @@ class Options extends React.Component {
 
   render() {
     console.log(this.props.id);
+    console.log(this.props.features[0].name);
     return (
       <div className="summary__option" key={this.props.id}>
         {/* <div className="summary__option__label">{this.props.feature} </div>
         <div className="summary__option__value">{this.selectedOption}</div> */}
         <label for={this.props.id}>
-          {this.props.id}
+          {this.props.features[0]}
           <input
-            type="radio"
+            type="text"
             id={this.props.id}
-            value={this.props.id}
-            name="option"
+            value={this.props.features}
+            name={this.props.id}
           ></input>
         </label>
       </div>

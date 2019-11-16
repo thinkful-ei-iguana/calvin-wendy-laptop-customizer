@@ -3,24 +3,25 @@ import Options from "./Options";
 import slugify from "slugify";
 
 function Features(props) {
-  console.log(props.features);
   const createFeature = (feature, idx) => {
-    console.log(feature);
     const featureHash = feature + "-" + idx;
     const options = [];
     let features = props.features[feature];
+    console.log(features);
     for (let key in features) {
       let item = features[key];
       const itemHash = slugify(JSON.stringify(item));
       options.push(
-        <Options
-          key={itemHash}
-          id={itemHash}
-          features={features}
-          className="feature__option"
-          name={slugify(feature)}
-          checked={item.name === features.name}
-        />
+        <div key={itemHash} className="feature__item">
+          <Options
+            key={idx}
+            id={idx}
+            features={features}
+            className="feature__option"
+            name={slugify(feature)}
+            checked={item.name === features.name}
+          />
+        </div>
         // onChange={e => this.props.updateFeature(feature, item)}
       );
     }
