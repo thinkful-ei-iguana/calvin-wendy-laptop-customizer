@@ -21,7 +21,15 @@ class Options extends React.Component {
       <div className="summary__option" key={this.props.id}>
         {/* <div className="summary__option__label">{this.props.feature} </div>
         <div className="summary__option__value">{this.selectedOption}</div> */}
-        <input type="readonly" value={this.props.id} name="option"></input>
+        <label for={this.props.id}>
+          {this.props.id}
+          <input
+            type="radio"
+            id={this.props.id}
+            value={this.props.id}
+            name="option"
+          ></input>
+        </label>
       </div>
     );
   }
