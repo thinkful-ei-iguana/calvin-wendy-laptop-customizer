@@ -16,19 +16,26 @@ class Options extends React.Component {
   };
 
   render() {
-    console.log(this.props.id);
-    console.log(this.props.features[0].name);
+    // console.log(this.props.id);
+    // console.log(this.props.features[0].name);
     return (
       <div className="summary__option" key={this.props.id}>
-        {/* <div className="summary__option__label">{this.props.feature} </div>
-        <div className="summary__option__value">{this.selectedOption}</div> */}
-        <label for={this.props.id}>
-          {this.props.features[0]}
+        <label className="labelOne" htmlFor={this.props.id}>
+          {this.props.features[0].name}
           <input
-            type="text"
-            id={this.props.id}
+            type="radio"
+            id={this.props.id[0]}
             value={this.props.features}
-            name={this.props.id}
+            name={this.props.name}
+          ></input>
+        </label>
+        <label className="labelTwo" htmlFor={this.props.id}>
+          {this.props.features[1].name}
+          <input
+            type="radio"
+            id={this.props.id[1]}
+            value={this.props.features}
+            name={this.props.name}
           ></input>
         </label>
       </div>
