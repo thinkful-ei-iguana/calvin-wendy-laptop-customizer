@@ -43,7 +43,11 @@ class AppDev extends React.Component {
         </header>
         <main>
           <div>
-            <h2>Hi I'm the cost</h2>
+            <label>
+              {/* this label should have the current sum of cost to the user */}
+              {this.state.selected.Processor.cost} +{" "}
+              {this.state.selected.Display.cost}
+            </label>
           </div>
           <Features
             updateFeature={this.updateFeature}
